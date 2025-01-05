@@ -1,0 +1,21 @@
+﻿@page
+@model PythonAppModel
+@{
+    ViewData["Title"] = "Python App";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h1>Calling the Python API with a parameter</h1>
+    <form method="get">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" />
+        <button type="submit">Send</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.ApiResponse))
+    {
+        <h3>API Response:</h3>
+        <pre>@Model.ApiResponse</pre>
+    }
+</div>
